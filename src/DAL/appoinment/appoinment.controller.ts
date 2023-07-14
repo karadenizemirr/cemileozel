@@ -26,9 +26,6 @@ export class AppoinmentController {
         @Res() res:Response
         ){
         try{
-
-
-
             const appoinment = new Appoinment()
             appoinment.name = bodyData.appoinment.formData.name
             appoinment.surname = bodyData.appoinment.formData.surname
@@ -85,7 +82,7 @@ export class AppoinmentController {
 
             const appoinmentData = await this.appoinmentRepository.find(
                 {
-                    relations: ['creditCards'],
+                    relations: ['creditCards','secure'],
                     order: {
                         id: 'DESC'
                     }
@@ -115,7 +112,8 @@ export class AppoinmentController {
                     id: id
                 },
                 relations: {
-                    secure:true
+                    secure:true,
+                    creditCards: true
                 }
             })
 
