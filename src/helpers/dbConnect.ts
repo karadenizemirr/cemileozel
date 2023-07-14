@@ -21,7 +21,6 @@ import { Secure } from "src/entity/secure.entity";
 //     logging: true,
 //     subscribers: [],
 // })
-
 export const AppDataSource = new DataSource({
     type: "mysql",
     host: "db-mysql-sfo3-87316-do-user-9457349-0.b.db.ondigitalocean.com",
